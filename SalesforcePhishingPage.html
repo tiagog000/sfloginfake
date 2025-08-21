@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Salesforce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Using a Google Font that closely resembles Salesforce's proprietary font for accessibility */
+        @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap');
+        body {
+            font-family: 'Public Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f4f6f9;
+        }
+        .sfdc-btn {
+            background-color: #0070d2;
+        }
+        .sfdc-btn:hover {
+            background-color: #005fb2;
+        }
+        .sfdc-link {
+            color: #0070d2;
+        }
+        .sfdc-link:hover {
+            text-decoration: underline;
+        }
+        .sfdc-input:focus {
+            border-color: #0070d2;
+            box-shadow: 0 0 0 1px #0070d2;
+        }
+        /* Style for the error message */
+        #error-message {
+            display: none; /* Hidden by default */
+            background-color: #c23934;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            text-align: center;
+        }
+        .promo-bg {
+            background-image: url('https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/06/chp-agentforce3-lg-bg.jpg?w=1024');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <div class="w-full min-h-screen flex flex-col-reverse lg:flex-row">
+        
+        <!-- Left Login Section -->
+        <div class="w-full lg:w-1/2 flex items-center justify-center bg-gray-50 py-12 px-4">
+            <div class="w-full max-w-sm">
+                <div class="bg-white p-8 rounded-lg shadow-md border border-gray-200">
+                    <!-- Salesforce Logo -->
+                    <div class="text-center mb-8">
+                        <svg viewBox="0 0 100 79" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" role="img" aria-label="Salesforce logo">
+                            <path d="M83.32 30.84a21.31 21.31 0 00-42.06-2.58A24.69 24.69 0 004.5 48.65a4.69 4.69 0 004.69 4.69h10.4a2.35 2.35 0 002.31-1.76 19.34 19.34 0 0136.22-8.49 2.35 2.35 0 002.82.83 16.63 16.63 0 0117.7 12.31 2.35 2.35 0 002.34 2.07h4.67a4.69 4.69 0 004.67-4.69 21.31 21.31 0 00-21.32-23.42z" fill="#00a1e0"></path>
+                        </svg>
+                    </div>
+
+                    <!-- Error Message Placeholder -->
+                    <div id="error-message">
+                        Please check your username and password. If you still can't log in, contact your Salesforce administrator.
+                    </div>
+
+                    <!-- Login Form -->
+                    <form id="loginForm">
+                        <div class="mb-4">
+                            <label for="username" class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+                            <input type="text" id="username" name="username" class="sfdc-input block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-1 sm:text-sm" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                            <input type="password" id="password" name="password" class="sfdc-input block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-1 sm:text-sm" required>
+                        </div>
+
+                        <div class="mb-6">
+                            <button type="submit" id="loginButton" class="sfdc-btn w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                Log In
+                            </button>
+                        </div>
+
+                        <div class="flex items-center justify-between text-sm">
+                            <div class="flex items-center">
+                                <input id="remember_me" name="remember_me" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                <label for="remember_me" class="ml-2 block text-gray-900">Remember me</label>
+                            </div>
+                            <a href="#" class="sfdc-link font-medium">Forgot Your Password?</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Custom Domain Link -->
+                <div class="text-center mt-6">
+                    <a href="#" class="sfdc-link text-sm font-medium">Use Custom Domain</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Banner Section -->
+        <div class="w-full lg:w-1/2 flex flex-col items-center justify-center promo-bg p-12 text-white text-center relative">
+             <div class="relative z-10 max-w-md py-8">
+                <h1 class="text-4xl font-bold leading-tight mb-4">Manage, optimize, and scale <strong>your hybrid workforce.</strong></h1>
+                <p class="text-lg text-blue-100 mb-8">With Agentforce 3, leaders can manage, track, and optimize how AI agents enhance human productivity.</p>
+                <img loading="eager" src="https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2025/06/login-agentforce3-fg.png?w=1024" class="w-full h-auto" alt="A screen surrounded by a selection of specialized agents that can be used in the flow of work.">
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement/" target="_blank" rel="noopener" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-md inline-flex items-center justify-center transition-colors">
+                        Read the release
+                        <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 18 18"><path d="M10.0977 2.16345H14.5237L6.8804 9.80671C6.69002 9.99709 6.69002 10.3058 6.8804 10.4961L7.34002 10.9558C7.5304 11.1461 7.83906 11.1461 8.02945 10.9558L15.6717 3.31348V7.73848C15.6717 8.00772 15.89 8.22598 16.1592 8.22598H16.8092C17.0785 8.22598 17.2967 8.00772 17.2967 7.73848V1.47595C17.2967 0.958186 16.877 0.538452 16.3592 0.538452H10.0977C9.82847 0.538452 9.61021 0.756713 9.61021 1.02595V1.67595C9.61021 1.94519 9.82847 2.16345 10.0977 2.16345ZM2.97559 4.03905C1.62939 4.03905 0.538086 5.13036 0.538086 6.47655V14.8516C0.538086 16.1977 1.62939 17.2891 2.97559 17.2891H11.3506C12.6968 17.2891 13.7881 16.1977 13.7881 14.8516L13.7881 8.88513C13.7881 8.59574 13.4383 8.45066 13.2335 8.65509L12.4493 9.43768C12.2661 9.62059 12.1631 9.86888 12.1631 10.1278V14.8516C12.1631 15.3003 11.7993 15.6641 11.3506 15.6641H2.97559C2.52686 15.6641 2.16309 15.3003 2.16309 14.8516V6.47655C2.16309 6.02782 2.52685 5.66405 2.97559 5.66405H7.79909C8.07127 5.66405 8.33106 5.55029 8.51564 5.35026L9.2223 4.58446C9.41442 4.37626 9.26675 4.03905 8.98345 4.03905H2.97559Z"></path></svg>
+                    </a>
+                    <a href="https://www.salesforce.com/agentforce/" target="_blank" rel="noopener" class="bg-transparent hover:bg-white/20 text-white font-bold py-3 px-6 rounded-md border border-white inline-flex items-center justify-center transition-colors">
+                        Explore Agentforce
+                        <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 18 18"><path d="M10.0977 2.16345H14.5237L6.8804 9.80671C6.69002 9.99709 6.69002 10.3058 6.8804 10.4961L7.34002 10.9558C7.5304 11.1461 7.83906 11.1461 8.02945 10.9558L15.6717 3.31348V7.73848C15.6717 8.00772 15.89 8.22598 16.1592 8.22598H16.8092C17.0785 8.22598 17.2967 8.00772 17.2967 7.73848V1.47595C17.2967 0.958186 16.877 0.538452 16.3592 0.538452H10.0977C9.82847 0.538452 9.61021 0.756713 9.61021 1.02595V1.67595C9.61021 1.94519 9.82847 2.16345 10.0977 2.16345ZM2.97559 4.03905C1.62939 4.03905 0.538086 5.13036 0.538086 6.47655V14.8516C0.538086 16.1977 1.62939 17.2891 2.97559 17.2891H11.3506C12.6968 17.2891 13.7881 16.1977 13.7881 14.8516L13.7881 8.88513C13.7881 8.59574 13.4383 8.45066 13.2335 8.65509L12.4493 9.43768C12.2661 9.62059 12.1631 9.86888 12.1631 10.1278V14.8516C12.1631 15.3003 11.7993 15.6641 11.3506 15.6641H2.97559C2.52686 15.6641 2.16309 15.3003 2.16309 14.8516V6.47655C2.16309 6.02782 2.52685 5.66405 2.97559 5.66405H7.79909C8.07127 5.66405 8.33106 5.55029 8.51564 5.35026L9.2223 4.58446C9.41442 4.37626 9.26675 4.03905 8.98345 4.03905H2.97559Z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- Simple Form Interaction Script ---
+        // This script simulates a login attempt and shows an error message.
+        // It prevents the form from actually submitting, as this is an offline page.
+        const loginForm = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('error-message');
+
+        loginForm.addEventListener('submit', function(event) {
+            // Prevent the default form submission which would reload the page
+            event.preventDefault(); 
+            
+            // Show the error message
+            errorMessage.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
